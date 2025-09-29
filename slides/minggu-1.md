@@ -127,19 +127,3 @@ php artisan serve
 - Buka browser untuk memastikan Laravel aktif.
 
 ---
-
-## Diskusi + Kuis Setup
-
-- **Diskusi:**
-
-  - Apa perbedaan coding PHP native dengan menggunakan Laravel?
-  - Bagaimana MVC membuat development lebih cepat?
-
-- **Kuis singkat:**
-  1. Sebutkan 3 komponen utama dalam arsitektur MVC.
-  2. Jalankan perintah untuk membuat _controller_ “UserController”.
-     ```bash
-     php artisan make:controller UserController
-     ```
-
----
