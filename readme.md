@@ -24,150 +24,150 @@
 
 ### Pertemuan 2
 
-- Materi: Pengenalan PHP Modern untuk Laravel (OOP, Composer, Artisan CLI)
+- Materi: PHP Dasar (Syntax, Variabel, Operator, Control Flow)
 
-- Outcome: Mahasiswa mampu menggunakan Composer dan Artisan dalam pengelolaan proyek Laravel.
+- OBE Outcome: Mahasiswa memahami dasar bahasa pemrograman PHP untuk kebutuhan backend.
 
-- Aktivitas: Latihan menggunakan Composer dan Artisan, studi kasus sederhana.
+- Aktivitas: Latihan PHP dasar (script sederhana, perulangan, kondisi).
 
-- Asesmen: Tugas individu (pembuatan project Laravel dasar).
+- Asesmen: Kuis singkat + tugas praktikum.
 
 ### Pertemuan 3
 
-- Materi: Struktur Direktori Laravel, Routing Dasar
+- Materi: OOP pada PHP (Class, Object, Inheritance, Polymorphism)
 
-- Outcome: Mahasiswa mampu menjelaskan struktur Laravel dan membuat routing sederhana.
+- OBE Outcome: Mahasiswa mampu menggunakan konsep OOP untuk membangun kode yang modular dan reusable.
 
-- Aktivitas: Eksplorasi struktur direktori, praktik membuat route dasar.
+- Aktivitas: Praktik pembuatan class sederhana dengan inheritance.
 
-- Asesmen: Kuis + latihan membuat route.
+- Asesmen: Tugas individu (membuat class & relasi).
 
 ### Pertemuan 4
 
-- Materi: Controller dan View pada Laravel (Blade Template)
+- Materi: Struktur Dasar Laravel & Project Setup (Composer, Direktori, .env, Konfigurasi Dasar)
 
-- Outcome: Mahasiswa dapat menghubungkan routing ke controller dan menampilkan data melalui Blade Template.
+- OBE Outcome: Mahasiswa memahami struktur proyek Laravel, konfigurasi, dan penggunaan Composer.
 
-- Aktivitas: Praktik implementasi controller dan view dengan Blade.
+- Aktivitas: Eksplorasi struktur folder Laravel dan setup database.
 
-- Asesmen: Tugas kelompok kecil (membuat halaman statis dinamis dengan Blade).
+- Asesmen: Praktik in-class setup project.
 
 ### Pertemuan 5
 
-- Materi: Model, Database Connection, dan Migration
+- Materi: Routing, Controller, dan View (Blade Template)
 
-- Outcome: Mahasiswa mampu membuat model, menghubungkan Laravel ke database, dan mengelola skema dengan migration.
+- OBE Outcome: Mahasiswa mampu membuat route, menghubungkannya dengan controller, dan menampilkan data dengan Blade.
 
-- Aktivitas: Praktik koneksi database, membuat migration, dan model sederhana.
+- Aktivitas: Praktik pembuatan halaman statis dan dinamis.
 
-- Asesmen: Praktik in-class (migration & model).
+- Asesmen: Tugas kelompok kecil (mini halaman dengan Blade).
 
 ### Pertemuan 6
 
-- Materi: Eloquent ORM (CRUD Dasar)
+- Materi: Artisan CLI dan Pembuatan Komponen (Controller, Model, Migration)
 
-- Outcome: Mahasiswa dapat melakukan operasi CRUD menggunakan Eloquent.
+- OBE Outcome: Mahasiswa memahami Artisan CLI dan mampu membangun komponen dasar dengan Artisan.
 
-- Aktivitas: Latihan CRUD (create, read, update, delete) dengan project Laravel.
+- Aktivitas: Latihan membuat controller, model, dan migration melalui Artisan.
 
-- Asesmen: Tugas individu (CRUD sederhana).
+- Asesmen: Praktik in-class.
 
 ### Pertemuan 7
 
-- Materi: Form Handling, Validation, dan Request Handling
+- Materi: Database Connection, Migration, dan Eloquent ORM (CRUD Dasar)
 
-- Outcome: Mahasiswa mampu mengelola input form, validasi data, dan request pada Laravel.
+- OBE Outcome: Mahasiswa dapat melakukan operasi CRUD menggunakan Eloquent ORM dengan migration.
 
-- Aktivitas: Praktik pembuatan form input dan validasi.
+- Aktivitas: Latihan CRUD (create, read, update, delete).
 
-- Asesmen: Kuis + latihan validasi form.
+- Asesmen: Tugas individu (CRUD sederhana).
 
 ### Pertemuan 8 (UTS)
 
-- Materi: Ujian Tengah Semester (Proyek Mini)
+- Materi: Ujian Tengah Semester (Proyek Mini Laravel Dasar)
 
-- Outcome: Mahasiswa dapat mengimplementasikan konsep routing, controller, view, model, dan CRUD sederhana.
+- OBE Outcome: Mahasiswa dapat membangun aplikasi Laravel sederhana dengan routing, controller, view, dan CRUD.
 
-- Aktivitas: Proyek individu/kelompok kecil berbasis kasus.
+- Aktivitas: Proyek individu/kelompok.
 
 - Asesmen: Ujian praktik.
 
 ### Pertemuan 9
 
-- Materi: Middleware dan Authentication Dasar
+- Materi: Form Handling, Validation, dan Request Handling
 
-- Outcome: Mahasiswa memahami konsep middleware dan dapat mengimplementasikan autentikasi login-logout sederhana.
+- OBE Outcome: Mahasiswa mampu mengelola input data dengan form, melakukan validasi, dan mengatur request.
 
-- Aktivitas: Praktik membuat middleware dan autentikasi user dengan Laravel.
+- Aktivitas: Praktik form input & validasi data.
 
-- Asesmen: Tugas individu (middleware & auth).
+- Asesmen: Kuis + latihan validasi form.
 
 ### Pertemuan 10
 
-- Materi: Relationship Database (One To One, One To Many, Many To Many)
+- Materi: Middleware dan Authentication Dasar
 
-- Outcome: Mahasiswa mampu mengimplementasikan relasi antar tabel menggunakan Eloquent.
+- OBE Outcome: Mahasiswa memahami middleware dan mengimplementasikan autentikasi login-logout sederhana.
 
-- Aktivitas: Praktik implementasi relasi antar model di Laravel.
+- Aktivitas: Latihan membuat middleware & sistem login dasar.
 
-- Asesmen: Praktik in-class + kuis singkat.
+- Asesmen: Tugas individu.
 
 ### Pertemuan 11
 
-- Materi: RESTful API dengan Laravel (Routing & Resource Controller)
+- Materi: Relationship Database (One To One, One To Many, Many To Many)
 
-- Outcome: Mahasiswa memahami konsep API dan dapat membuat resource controller untuk REST API.
+- OBE Outcome: Mahasiswa dapat mengimplementasikan relasi tabel dalam model Eloquent.
 
-- Aktivitas: Praktik membuat REST API sederhana (GET, POST).
+- Aktivitas: Praktik implementasi relasi antar model.
 
-- Asesmen: Tugas individu (API sederhana).
+- Asesmen: Praktik in-class + kuis singkat.
 
 ### Pertemuan 12
 
-- Materi: API Authentication dengan Laravel Passport / Sanctum
+- Materi: File Upload dan Storage Management
 
-- Outcome: Mahasiswa dapat mengimplementasikan API authentication dengan Passport/Sanctum.
+- OBE Outcome: Mahasiswa mampu mengelola upload data/file dan penyimpanan pada aplikasi Laravel.
 
-- Aktivitas: Praktik implementasi token-based authentication.
-
-- Asesmen: Tugas kelompok kecil.
-
-### Pertemuan 13
-
-- Materi: File Upload dan Storage Management pada Laravel
-
-- Outcome: Mahasiswa mampu mengelola file upload dan penyimpanan menggunakan storage Laravel.
-
-- Aktivitas: Praktik upload dan pengelolaan file.
+- Aktivitas: Praktik upload file + storage Laravel.
 
 - Asesmen: Praktik in-class.
 
+### Pertemuan 13
+
+- Materi: Mail & Notification di Laravel
+
+- OBE Outcome: Mahasiswa memahami sistem notifikasi Laravel dan dapat mengirim email/notifikasi.
+
+- Aktivitas: Praktik membuat mail sederhana + notifikasi.
+
+- Asesmen: Tugas individu (membangun fitur notifikasi email).
+
 ### Pertemuan 14
 
-- Materi: Deployment Laravel ke Server (Heroku, Laravel Forge, VPS)
+- Materi: Optimisasi Aplikasi & Best Practices (Security, Cache, Performance)
 
-- Outcome: Mahasiswa memahami proses deployment aplikasi Laravel ke lingkungan produksi.
+- OBE Outcome: Mahasiswa mengetahui praktik terbaik dalam menjaga keamanan dan performa aplikasi Laravel.
 
-- Aktivitas: Simulasi deployment project ke hosting atau VPS.
+- Aktivitas: Diskusi kasus keamanan dan optimisasi.
 
-- Asesmen: Tugas akhir (deployment mini project).
+- Asesmen: Kuis reflektif.
 
 ### Pertemuan 15
 
-- Materi: Review Proyek Akhir + Pembahasan Studi Kasus (Best Practices: Security, Optimization, Scalability)
+- Materi: Deployment Laravel ke Server (Heroku, VPS, Laravel Forge)
 
-- Outcome: Mahasiswa mampu mengevaluasi aplikasi Laravel yang sudah dibuat berdasarkan aspek keamanan, performa, dan skalabilitas.
+- OBE Outcome: Mahasiswa memahami tahapan deployment aplikasi Laravel ke lingkungan produksi.
 
-- Aktivitas: Diskusi kelompok, presentasi, review proyek.
+- Aktivitas: Simulasi deployment project ke server.
 
-- Asesmen: Kuis reflektif + progress report proyek akhir.
+- Asesmen: Tugas deployment mini project.
 
 ### Pertemuan 16 (UAS)
 
 - Materi: Ujian Akhir Semester (Proyek Akhir Aplikasi Web dengan Laravel)
 
-- Outcome: Mahasiswa mampu membangun aplikasi web utuh dengan Laravel yang mencakup CRUD, autentikasi, REST API, dan deployment.
+- OBE Outcome: Mahasiswa mampu membangun aplikasi Laravel lengkap mencakup CRUD, autentikasi, relasi database, file upload, mail, dan deployment.
 
-- Aktivitas: Presentasi dan penilaian proyek akhir.
+- Aktivitas: Presentasi proyek akhir.
 
 - Asesmen: Ujian proyek akhir + laporan.
