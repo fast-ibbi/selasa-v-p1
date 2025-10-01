@@ -20,7 +20,7 @@
   - https://fast-ibbi.github.io/selasa-v-p1/git
   - https://fast-ibbi.github.io/selasa-v-p1/emmet
   - https://fast-ibbi.github.io/selasa-v-p1/terminal
-  - https://fast-ibbi.github.io/selasa-v-p1/minggu-1
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-1
 
 ### Pertemuan 2
 
