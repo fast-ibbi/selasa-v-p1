@@ -32,6 +32,9 @@
 
 - Asesmen: Kuis singkat + tugas praktikum.
 
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-2
+
 ### Pertemuan 3
 
 - Materi: OOP pada PHP (Class, Object, Inheritance, Polymorphism)
@@ -41,6 +44,9 @@
 - Aktivitas: Praktik pembuatan class sederhana dengan inheritance.
 
 - Asesmen: Tugas individu (membuat class & relasi).
+
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-3
 
 ### Pertemuan 4
 
@@ -52,6 +58,9 @@
 
 - Asesmen: Praktik in-class setup project.
 
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-4
+
 ### Pertemuan 5
 
 - Materi: Routing, Controller, dan View (Blade Template)
@@ -61,6 +70,9 @@
 - Aktivitas: Praktik pembuatan halaman statis dan dinamis.
 
 - Asesmen: Tugas kelompok kecil (mini halaman dengan Blade).
+
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-5
 
 ### Pertemuan 6
 
@@ -72,6 +84,9 @@
 
 - Asesmen: Praktik in-class.
 
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-6
+
 ### Pertemuan 7
 
 - Materi: Database Connection, Migration, dan Eloquent ORM (CRUD Dasar)
@@ -81,6 +96,9 @@
 - Aktivitas: Latihan CRUD (create, read, update, delete).
 
 - Asesmen: Tugas individu (CRUD sederhana).
+
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-7
 
 ### Pertemuan 8 (UTS)
 
@@ -92,6 +110,9 @@
 
 - Asesmen: Ujian praktik.
 
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-8
+
 ### Pertemuan 9
 
 - Materi: Form Handling, Validation, dan Request Handling
@@ -101,6 +122,9 @@
 - Aktivitas: Praktik form input & validasi data.
 
 - Asesmen: Kuis + latihan validasi form.
+
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-9
 
 ### Pertemuan 10
 
@@ -112,6 +136,9 @@
 
 - Asesmen: Tugas individu.
 
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-10
+
 ### Pertemuan 11
 
 - Materi: Relationship Database (One To One, One To Many, Many To Many)
@@ -121,6 +148,9 @@
 - Aktivitas: Praktik implementasi relasi antar model.
 
 - Asesmen: Praktik in-class + kuis singkat.
+
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-11
 
 ### Pertemuan 12
 
@@ -132,6 +162,9 @@
 
 - Asesmen: Praktik in-class.
 
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-12
+
 ### Pertemuan 13
 
 - Materi: Mail & Notification di Laravel
@@ -141,6 +174,9 @@
 - Aktivitas: Praktik membuat mail sederhana + notifikasi.
 
 - Asesmen: Tugas individu (membangun fitur notifikasi email).
+
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-13
 
 ### Pertemuan 14
 
@@ -152,6 +188,9 @@
 
 - Asesmen: Kuis reflektif.
 
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-14
+
 ### Pertemuan 15
 
 - Materi: Deployment Laravel ke Server (Heroku, VPS, Laravel Forge)
@@ -161,6 +200,9 @@
 - Aktivitas: Simulasi deployment project ke server.
 
 - Asesmen: Tugas deployment mini project.
+
+- Slides :
+  - https://fast-ibbi.github.io/selasa-v-p1/pertemuan-15
 
 ### Pertemuan 16 (UAS)
 
