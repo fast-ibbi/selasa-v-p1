@@ -60,6 +60,17 @@ _paginate: skip
 
 ---
 
+## Quiz 1
+
+1. Tag pembuka PHP yang benar adalah?
+
+- A) `<? php ?>`
+- B) `<?php ?>`
+- C) `<script php></script>`
+- D) `<?= ?>`
+
+---
+
 ## Komentar pada PHP
 
 - Komentar satu baris: `//` atau `#`.
@@ -125,6 +136,17 @@ echo $greeting; // Output: Selamat pagi
 
 ---
 
+## Quiz 2
+
+2. Mana penamaan variabel PHP yang valid?
+
+- A) `$1nama`
+- B) `$nama_1`
+- C) `nama$`
+- D) `$-nama`
+
+---
+
 ## Konstanta pada PHP
 
 - Nilai tetap menggunakan `define` atau `const`.
@@ -146,6 +168,17 @@ $kata = "Laravel";
 echo strlen($kata); // Output: 7
 var_dump($kata); // string(7) "Laravel"
 ```
+
+---
+
+## Quiz 3
+
+3. Apa hasil dari `var_dump(5 == '5');` di PHP?
+
+- A) `int(5)`
+- B) `string(1)`
+- C) `bool(true)`
+- D) error
 
 ---
 
@@ -278,6 +311,17 @@ for ($i = 1; $i <= 10; $i++) {
 
 ---
 
+## Quiz 4
+
+4. Pernyataan yang tepat untuk mengeksekusi blok kode berulang berdasarkan kondisi adalah?
+
+- A) `if`
+- B) `switch`
+- C) `for`
+- D) `include`
+
+---
+
 ## Definisi dan Inisialisasi Array
 
 - Array adalah tipe data koleksi.
@@ -335,11 +379,14 @@ foreach ($warna as $w) {
 
 ---
 
-## Latihan Mandiri
+## Quiz 5
 
-- Buat program sederhana: input nama, cetak salam.
-- Gunakan loop untuk menampilkan daftar angka.
-- Buat array dan tampilkan elemen dengan foreach.
+5. Cara yang benar menambahkan elemen di akhir array numerik `$arr` adalah?
+
+- A) `$arr[] = 'elemen';`
+- B) `$arr->push('elemen');`
+- C) `$arr['elemen'] = true;`
+- D) `push($arr, 'elemen');`
 
 <!--
 ## Soal Latihan Praktek
@@ -499,4 +546,5 @@ Status: Registrasi gagal - Ada 2 kesalahan
 ```
 
 ---
- -->
+
+-->
