@@ -58,8 +58,6 @@ _paginate: skip
 
 ---
 
----
-
 ## Pengenalan Relasi Antar Tabel
 
 **Relasi Database:**
@@ -159,8 +157,6 @@ $table->foreignId('user_id')->constrained()->onDelete('cascade');
 
 ---
 
----
-
 ## Konsep One To One
 
 **Karakteristik:**
@@ -245,6 +241,8 @@ class User extends Model
 }
 ```
 
+---
+
 **Model Profile (belongsTo):**
 
 ```php
@@ -279,6 +277,8 @@ $user->profile()->create([
 ]);
 ```
 
+---
+
 **Mengakses data:**
 
 ```php
@@ -296,8 +296,6 @@ echo $profile->user->name; // John
 ```php
 $user->profile->update(['address' => 'Surabaya']);
 ```
-
----
 
 ---
 
@@ -381,6 +379,8 @@ class User extends Model
 }
 ```
 
+---
+
 **Model Post (belongsTo):**
 
 ```php
@@ -445,14 +445,14 @@ $publishedPosts = $user->posts()->where('published', true)->get();
 $totalPosts = $user->posts()->count();
 ```
 
+---
+
 **Dari Post ke User:**
 
 ```php
 $post = Post::find(1);
 echo $post->user->name; // John
 ```
-
----
 
 ---
 
@@ -534,6 +534,8 @@ public function up()
 }
 ```
 
+---
+
 **Buat pivot table:**
 
 ```php
@@ -565,6 +567,8 @@ class Post extends Model
     }
 }
 ```
+
+---
 
 **Model Tag:**
 
@@ -604,6 +608,8 @@ $post->tags()->attach([1, 2, 3]);
 $post->tags()->attach(1, ['created_at' => now()]);
 ```
 
+---
+
 **Detach (menghapus relasi):**
 
 ```php
@@ -632,8 +638,6 @@ foreach($post->tags as $tag) {
 
 ---
 
----
-
 ## N+1 Query Problem & Eager Loading
 
 **Problem N+1 Query:**
@@ -656,6 +660,8 @@ foreach($posts as $post) {
     echo $post->user->name; // No additional query
 }
 ```
+
+---
 
 **Multiple relationships:**
 
@@ -686,6 +692,8 @@ $posts = Post::whereHas('tags', function($query) {
     $query->where('name', 'Laravel');
 })->get();
 ```
+
+---
 
 **Count relasi:**
 
@@ -721,6 +729,8 @@ $posts = Post::when($includeTags, function($query) {
 - Contoh: User → Posts
 - Relasi paling umum
 
+---
+
 **Many To Many (M:N):**
 
 - `belongsToMany` di kedua sisi
@@ -732,6 +742,14 @@ $posts = Post::when($includeTags, function($query) {
 - Gunakan eager loading untuk menghindari N+1 query
 - Foreign key constraint untuk data integrity
 - Naming convention untuk pivot table
+
+---
+
+<!--
+_class: lead
+-->
+
+# Quiz
 
 ---
 

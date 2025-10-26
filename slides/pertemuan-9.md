@@ -83,6 +83,8 @@ User → Form (View) → Submit → Route → Controller → Process → Respons
 </form>
 ```
 
+---
+
 **Poin Penting:**
 
 - `action`: URL tujuan form
@@ -108,6 +110,8 @@ User → Form (View) → Submit → Route → Controller → Process → Respons
 - `@csrf` menghasilkan hidden input dengan token
 - Laravel otomatis memvalidasi token ini
 - Tanpa `@csrf`, form akan ditolak (419 error)
+
+---
 
 **Token yang dihasilkan:**
 
@@ -180,7 +184,11 @@ $name = $request->name;
 
 // Cara 3: all()
 $data = $request->all();
+```
 
+---
+
+```php
 // Cara 4: only()
 $data = $request->only(['name', 'email']);
 
@@ -205,6 +213,8 @@ if ($request->has('name')) {
   <button type="submit">Daftar</button>
 </form>
 ```
+
+---
 
 **Controller:**
 
@@ -231,6 +241,8 @@ public function store(Request $request)
 - Email format salah masuk database
 - Password terlalu pendek
 - Data duplikat tidak terdeteksi
+
+---
 
 **Dengan Validasi:**
 
@@ -260,6 +272,8 @@ public function store(Request $request)
     return redirect()->route('home');
 }
 ```
+
+---
 
 **Cara Kerja:**
 
@@ -330,6 +344,8 @@ $request->validate([
 </form>
 ```
 
+---
+
 **Penjelasan:**
 
 - `@error('field_name')` mengecek apakah ada error untuk field tersebut
@@ -357,6 +373,8 @@ $request->validate([
   <!-- form fields -->
 </form>
 ```
+
+---
 
 **Kapan Digunakan:**
 
@@ -387,6 +405,8 @@ $request->validate([
     <button type="submit">Submit</button>
 </form>
 ```
+
+---
 
 **Fungsi old():**
 
@@ -426,6 +446,8 @@ $request->validate([
 ```bash
 php artisan make:request StoreUserRequest
 ```
+
+---
 
 **StoreUserRequest.php:**
 
@@ -484,6 +506,8 @@ class UserController extends Controller
 }
 ```
 
+---
+
 **Keuntungan:**
 
 - Pemisahan logic validasi dari controller
@@ -506,7 +530,11 @@ class UserController extends Controller
   </ul>
 </div>
 @endif
+```
 
+---
+
+```html
 <form action="{{ route('contact.store') }}" method="POST">
   @csrf
 
@@ -541,7 +569,11 @@ class ContactController extends Controller
     {
         return view('contact');
     }
+```
 
+---
+
+```php
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -588,6 +620,8 @@ public function handle(Request $request)
 }
 ```
 
+---
+
 **Prinsip REST:**
 
 - GET: mengambil data
@@ -615,6 +649,8 @@ public function handle(Request $request)
   <button type="submit">Upload</button>
 </form>
 ```
+
+---
 
 **Controller:**
 
@@ -647,6 +683,8 @@ $request->validate([
     'video' => 'nullable|file|mimes:mp4,mov|max:51200',
 ]);
 ```
+
+---
 
 **Penjelasan Rules:**
 
@@ -684,6 +722,8 @@ public function store(Request $request)
 }
 ```
 
+---
+
 **Menampilkan di View:**
 
 ```html
@@ -706,6 +746,8 @@ public function store(Request $request)
 4. **Mass Assignment:** Gunakan `$fillable` atau `$guarded` di Model
 5. **File Upload:** Validasi tipe dan ukuran file
 6. **Rate Limiting:** Batasi jumlah submit form
+
+---
 
 **Contoh Fillable di Model:**
 
@@ -736,6 +778,8 @@ app/
 │   └── Middleware/
 ```
 
+---
+
 **Keuntungan Form Request Class:**
 
 - Validasi terpisah dari controller
@@ -761,6 +805,8 @@ public function update(UpdateUserRequest $request, $id) { }
 - `@method()` untuk method spoofing (PUT/DELETE)
 - `old()` untuk repopulate form setelah error
 - `enctype="multipart/form-data"` untuk file upload
+
+---
 
 **Validation:**
 

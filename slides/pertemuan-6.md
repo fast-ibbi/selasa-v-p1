@@ -16,7 +16,7 @@ _paginate: skip
 
 ---
 
-## Tujuan Pembelajaran (OBE Outcome)
+## Tujuan Pembelajaran
 
 Setelah pertemuan ini, mahasiswa diharapkan mampu:
 
@@ -36,23 +36,14 @@ Setelah pertemuan ini, mahasiswa diharapkan mampu:
 - Tidak konsisten dengan konvensi Laravel
 - Membuang waktu untuk hal repetitif
 
+---
+
 **Solusi dengan Artisan:**
 
 - Generate file otomatis dengan struktur benar
 - Namespace dan boilerplate code sudah tersedia
 - Konsisten dengan Laravel convention
 - Hemat waktu, fokus pada logika bisnis
-
----
-
-## Roadmap Materi Hari Ini
-
-1. Pengenalan Artisan CLI
-2. Membuat Controller dengan Artisan
-3. Membuat Model dengan Artisan
-4. Membuat Migration dengan Artisan
-5. Kombinasi perintah dan best practices
-6. Hands-on: Membuat modul lengkap
 
 ---
 
@@ -125,6 +116,8 @@ php artisan list
 - Pengelompokan berdasarkan kategori (make, migrate, db, cache, dll)
 - Deskripsi singkat setiap perintah
 
+---
+
 **Kategori penting:**
 
 - `make:*` - generate file/komponen
@@ -147,6 +140,8 @@ php artisan help [command]
 ```bash
 php artisan help make:controller
 ```
+
+---
 
 **Informasi yang ditampilkan:**
 
@@ -220,6 +215,8 @@ php artisan make:controller ProductController --resource
 
 Hasil: class dengan 7 method RESTful (index, create, store, show, edit, update, destroy)
 
+---
+
 **Kapan pakai resource?**
 
 - Jika butuh CRUD lengkap
@@ -243,6 +240,8 @@ class ProductController extends Controller
     // Kosong - tambahkan method sendiri
 }
 ```
+
+---
 
 **Resource controller:**
 
@@ -328,33 +327,14 @@ class ProductController extends Controller  // 3. Class definition
 }
 ```
 
+---
+
 **Penjelasan:**
 
 1. Namespace mengikuti struktur folder
 2. Import dependencies yang dibutuhkan
 3. Extends Controller base class
 4. Method berisi logika bisnis
-
----
-
-## Praktik - Membuat MahasiswaController
-
-**Tugas:** Buat controller untuk modul Mahasiswa dengan resource
-
-**Langkah:**
-
-```bash
-php artisan make:controller MahasiswaController --resource
-```
-
-**Verifikasi:**
-
-- Cek file di `app/Http/Controllers/MahasiswaController.php`
-- Pastikan ada 7 method RESTful
-- Lihat namespace dan extends
-
-**Diskusi:** Method mana yang digunakan untuk menampilkan form edit data mahasiswa?  
-**Jawaban:** Method `edit($id)`
 
 ---
 
@@ -390,6 +370,8 @@ php artisan make:model Product
 | User      | users          |
 | Category  | categories     |
 | OrderItem | order_items    |
+
+---
 
 **Konvensi:**
 
@@ -444,7 +426,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+```
 
+---
+
+```php
 class Product extends Model
 {
     use HasFactory;
@@ -474,7 +460,11 @@ class Product extends Model
     protected $table = 'products';      // nama tabel
     protected $primaryKey = 'id';       // primary key
     public $timestamps = true;          // created_at, updated_at
+```
 
+---
+
+```php
     protected $fillable = [             // kolom yang bisa mass assignment
         'name', 'price', 'description'
     ];
@@ -634,6 +624,8 @@ php artisan make:model Product -mcr
 
 **Hemat waktu dan konsisten!**
 
+---
+
 **Variasi lain:**
 
 ```bash
@@ -657,6 +649,8 @@ php artisan make:model Product -mfs
    - Model: Singular, PascalCase (Product)
    - Controller: NamaController (ProductController)
    - Migration: descriptive dengan action (create_products_table)
+
+---
 
 3. **Gunakan shortcut kombinasi**
 
@@ -716,18 +710,23 @@ php artisan tinker            # Interactive REPL
 
 ## Rangkuman Perintah Penting
 
-| Perintah                       | Fungsi                          |
-| ------------------------------ | ------------------------------- |
-| `php artisan list`             | Lihat semua command             |
-| `php artisan help [command]`   | Bantuan command tertentu        |
-| `php artisan make:controller`  | Buat controller                 |
-| `php artisan make:model`       | Buat model                      |
-| `php artisan make:migration`   | Buat migration                  |
-| `php artisan make:model -mcr`  | Buat model+migration+controller |
-| `php artisan migrate`          | Jalankan migration              |
-| `php artisan migrate:rollback` | Rollback migration              |
-| `php artisan serve`            | Start dev server                |
-| `php artisan route:list`       | List semua route                |
+| Perintah                      | Fungsi                          |
+| ----------------------------- | ------------------------------- |
+| `php artisan list`            | Lihat semua command             |
+| `php artisan help [command]`  | Bantuan command tertentu        |
+| `php artisan make:controller` | Buat controller                 |
+| `php artisan make:model`      | Buat model                      |
+| `php artisan make:migration`  | Buat migration                  |
+| `php artisan make:model -mcr` | Buat model+migration+controller |
+
+---
+
+| Perintah                       | Fungsi             |
+| ------------------------------ | ------------------ |
+| `php artisan migrate`          | Jalankan migration |
+| `php artisan migrate:rollback` | Rollback migration |
+| `php artisan serve`            | Start dev server   |
+| `php artisan route:list`       | List semua route   |
 
 ---
 

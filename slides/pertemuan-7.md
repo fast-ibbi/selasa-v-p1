@@ -100,6 +100,8 @@ DB_PASSWORD=
 ],
 ```
 
+---
+
 **Catatan:**
 
 - File ini membaca dari `.env`
@@ -128,6 +130,8 @@ Route::get('/test-db', function () {
     }
 });
 ```
+
+---
 
 **Troubleshooting:**
 
@@ -177,6 +181,8 @@ Schema::create('products', function (Blueprint $table) {
 });
 ```
 
+---
+
 **Keunggulan Migration:**
 
 - Database agnostic (tidak tergantung jenis database)
@@ -204,6 +210,8 @@ php artisan make:migration create_products_table --create=products
 ```bash
 php artisan make:migration add_category_to_products_table --table=products
 ```
+
+---
 
 **Lokasi File:**
 
@@ -294,6 +302,8 @@ $table->timestamps();                  // created_at & updated_at
 $table->softDeletes();                 // deleted_at (soft delete)
 ```
 
+---
+
 **Modifiers:**
 
 ```php
@@ -321,6 +331,8 @@ $result = DB::select('SELECT * FROM products WHERE id = ?', [1]);
 // Dengan Eloquent
 $product = Product::find(1);
 ```
+
+---
 
 **Keuntungan:**
 
@@ -350,6 +362,8 @@ $users = DB::table('users')->where('active', 1)->get();
 ```php
 $users = User::where('active', 1)->get();
 ```
+
+---
 
 **Perbandingan:**
 
@@ -408,6 +422,8 @@ php artisan make:model Product -a
 // Tabel otomatis: order_items
 ```
 
+---
+
 **Override nama tabel:**
 
 ```php
@@ -444,6 +460,8 @@ class Product extends Model
     // protected $guarded = ['id'];
 }
 ```
+
+---
 
 **Mass Assignment:**
 
@@ -485,6 +503,8 @@ $product->price = 15000000;
 $product->stock = 10;
 $product->save();
 ```
+
+---
 
 **Perbedaan:**
 
@@ -542,7 +562,11 @@ $product = Product::findOrFail(1);
 
 // Ambil data pertama
 $product = Product::first();
+```
 
+---
+
+```php
 // Ambil dengan kondisi
 $products = Product::where('price', '>', 1000000)->get();
 
@@ -574,7 +598,11 @@ public function show($id)
 
     return view('products.show', compact('product'));
 }
+```
 
+---
+
+```php
 public function search(Request $request)
 {
     $products = Product::where('name', 'like', '%' . $request->keyword . '%')
@@ -606,6 +634,8 @@ Product::where('id', 1)->update([
     'price' => 16000000
 ]);
 ```
+
+---
 
 **Method 3: findOrFail() + update**
 
@@ -640,7 +670,11 @@ public function update(Request $request, $id)
         'data' => $product
     ]);
 }
+```
 
+---
+
+```php
 // Atau dengan conditional update
 public function updateStock($id, $quantity)
 {
@@ -671,6 +705,8 @@ Product::destroy(1);
 Product::destroy([1, 2, 3]);
 Product::destroy(1, 2, 3);
 ```
+
+---
 
 **Method 3: where() + delete()**
 
@@ -715,6 +751,8 @@ Schema::create('products', function (Blueprint $table) {
 });
 ```
 
+---
+
 **3. Jalankan Migration:**
 
 ```bash
@@ -752,6 +790,8 @@ use SoftDeletes;
 // Data tidak benar-benar dihapus, bisa di-restore
 ```
 
+---
+
 **Query Optimization:**
 
 ```php
@@ -772,29 +812,6 @@ Product::chunk(100, function ($products) {
 // Hindari N+1 query problem
 Product::with('category')->get();
 ```
-
----
-
-## Rangkuman
-
-**Database Connection:**
-
-- Konfigurasi di `.env`
-- Support multiple database
-- Test koneksi sebelum development
-
-**Migration:**
-
-- Version control untuk database
-- Method `up()` dan `down()`
-- Perintah: migrate, rollback, refresh, fresh
-
-**Eloquent ORM:**
-
-- One Model = One Table
-- CRUD: create(), all(), find(), update(), delete()
-- Mass assignment dengan $fillable
-- Best practice: eager loading, soft delete
 
 ---
 

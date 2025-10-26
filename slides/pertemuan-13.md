@@ -95,6 +95,8 @@ _paginate: skip
 Controller → Mailable Class → Mail Facade → Driver → Recipient
 ```
 
+---
+
 **Komponen Utama:**
 
 - Mailable class (app/Mail)
@@ -119,6 +121,8 @@ MAIL_FROM_ADDRESS=noreply@example.com
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
+---
+
 **Parameter Penting:**
 
 - `MAIL_MAILER`: Driver yang digunakan (smtp, sendmail, mailgun, etc)
@@ -141,6 +145,8 @@ MAIL_FROM_NAME="${APP_NAME}"
 | log      | Log file only        | Development/Testing          |
 | array    | Store in memory      | Unit testing                 |
 
+---
+
 **Rekomendasi:**
 
 - Development: `log` atau `mailtrap`
@@ -158,6 +164,8 @@ MAIL_FROM_NAME="${APP_NAME}"
 2. Buat inbox baru
 3. Copy kredensial SMTP
 4. Paste ke `.env` Laravel
+
+---
 
 **Keuntungan Mailtrap:**
 
@@ -195,6 +203,8 @@ resources/
         └── password-reset.blade.php
 ```
 
+---
+
 **Konvensi Penamaan:**
 
 - Class: PascalCase (WelcomeEmail)
@@ -209,6 +219,8 @@ resources/
 ```bash
 php artisan make:mail WelcomeEmail
 ```
+
+---
 
 **Generated Class:**
 
@@ -254,7 +266,11 @@ class WelcomeEmail extends Mailable
     {
         $this->user = $user;
     }
+```
 
+---
+
+```php
     public function build()
     {
         return $this->from('noreply@example.com')
@@ -291,6 +307,11 @@ class WelcomeEmail extends Mailable
                   text-decoration: none; border-radius: 5px; }
     </style>
 </head>
+```
+
+---
+
+```blade
 <body>
     <div class="container">
         <div class="header">
@@ -329,6 +350,8 @@ class WelcomeEmail extends Mailable
     }
 }
 ```
+
+---
 
 **Method 2: with() Method**
 
@@ -373,6 +396,8 @@ public function sendWelcome()
 }
 ```
 
+---
+
 **Multiple Recipients:**
 
 ```php
@@ -408,7 +433,11 @@ public function register(Request $request)
         'email' => 'required|email|unique:users',
         'password' => 'required|min:8'
     ]);
+```
 
+---
+
+```php
     $user = User::create([
         'name' => $validated['name'],
         'email' => $validated['email'],
@@ -439,6 +468,8 @@ public function register(Request $request)
 - Mail: Fokus pada pengiriman email saja
 - Notification: Multi-channel, lebih abstrak
 
+---
+
 **Kapan Menggunakan Notification:**
 
 - Butuh multi-channel delivery
@@ -459,6 +490,8 @@ public function register(Request $request)
 | Use Case   | Email blast     | User alerts                |
 | Channels   | Email only      | Email, DB, SMS, Slack, etc |
 
+---
+
 **Contoh Penggunaan:**
 
 - Mail: Newsletter, marketing email
@@ -476,6 +509,8 @@ public function register(Request $request)
 4. **nexmo** - SMS via Nexmo (Vonage)
 5. **slack** - Slack channel message
 
+---
+
 **Custom Channels:**
 
 - FCM (Firebase Cloud Messaging)
@@ -491,6 +526,14 @@ public function via($notifiable)
     return ['mail', 'database']; // Multi-channel delivery
 }
 ```
+
+---
+
+<!--
+_class: lead
+-->
+
+# Quiz
 
 ---
 

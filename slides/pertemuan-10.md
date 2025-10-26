@@ -66,6 +66,8 @@ _paginate: skip
 **Definisi:**
 Middleware adalah lapisan filter yang memproses HTTP request sebelum mencapai controller atau setelah response dibuat.
 
+---
+
 **Fungsi Utama:**
 
 - Memfilter request masuk
@@ -87,6 +89,8 @@ Request → Middleware → Route → Controller → Response
 - Melewati security check (Middleware)
 - Jika valid: lanjut ke gate (Controller)
 - Jika tidak valid: ditolak/redirect
+
+---
 
 **Dalam Laravel:**
 
@@ -119,6 +123,8 @@ Response (melalui middleware lagi)
 Browser
 ```
 
+---
+
 **3 Tahap Middleware:**
 
 1. Before Middleware (sebelum controller)
@@ -140,6 +146,8 @@ Browser
 - Dijalankan pada route tertentu
 - Didaftarkan di `$middlewareAliases`
 - Contoh: `auth`, `guest`, `throttle`
+
+---
 
 **3. Middleware Group**
 
@@ -210,6 +218,8 @@ Route::get('/dashboard', function () {
 - Catat setiap akses ke halaman tertentu
 - Middleware: `LogActivity`
 
+---
+
 **Kasus 4: Maintenance Mode**
 
 - Redirect semua request kecuali IP tertentu
@@ -227,6 +237,8 @@ php artisan make:middleware CheckAge
 
 **Output:**
 File baru di `app/Http/Middleware/CheckAge.php`
+
+---
 
 **Struktur Dasar:**
 
@@ -257,6 +269,8 @@ class CheckAge
 - `$request`: HTTP request object
 - `$next`: Closure untuk melanjutkan request
 - `...$params`: Parameter tambahan (opsional)
+
+---
 
 **Return Options:**
 
@@ -301,6 +315,8 @@ class CheckAge
     }
 }
 ```
+
+---
 
 **Penjelasan:**
 
@@ -351,6 +367,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'checkage']);
 ```
 
+---
+
 **Cara 3: Route Group**
 
 ```php
@@ -386,6 +404,8 @@ Route::get('/admin', function () {
 - Cek apakah user boleh akses resource
 - Contoh: Admin bisa hapus user, user biasa tidak
 
+---
+
 **Analogi:**
 
 - Authentication = menunjukkan KTP di gerbang
@@ -414,6 +434,8 @@ Route::get('/admin', function () {
 3. Redirect ke halaman login/home
 ```
 
+---
+
 **Session Storage:**
 
 - Data disimpan di server
@@ -440,6 +462,8 @@ File: `config/session.php`
 - `database`: simpan di database
 - `redis`: simpan di Redis cache
 
+---
+
 **Auth Session:**
 Laravel otomatis manage session saat login/logout dengan `Auth` facade
 
@@ -458,6 +482,8 @@ Laravel otomatis manage session saat login/logout dengan `Auth` facade
 - Bootstrap-based scaffolding
 - Legacy, masih didukung
 - Command: `composer require laravel/ui`
+
+---
 
 **Manual Authentication:**
 
@@ -489,6 +515,8 @@ $user = User::create([
 ]);
 ```
 
+---
+
 **Verify saat Login:**
 
 ```php
@@ -517,6 +545,8 @@ Cross-Site Request Forgery: serangan yang memaksa user mengirim request tidak sa
     <button type="submit">Login</button>
 </form>
 ```
+
+---
 
 **Token CSRF:**
 
@@ -551,6 +581,8 @@ public function up()
 }
 ```
 
+---
+
 **Jalankan Migration:**
 
 ```bash
@@ -568,6 +600,8 @@ php artisan migrate
 ```bash
 php artisan make:controller AuthController
 ```
+
+---
 
 **Method yang Dibutuhkan:**
 
@@ -629,6 +663,8 @@ public function login(Request $request)
 }
 ```
 
+---
+
 **Penjelasan:**
 
 - `Auth::attempt()`: validasi kredensial & buat session
@@ -641,25 +677,31 @@ public function login(Request $request)
 
 **File:** `resources/views/auth/login.blade.php`
 
-```blade
+```html
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Login</title>
-</head>
-<body>
+  </head>
+  <body>
     <h2>Login</h2>
 
     @if ($errors->any())
-        <div style="color: red;">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div style="color: red;">
+      <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
     @endif
+  </body>
+</html>
+```
 
+---
+
+```html
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
@@ -699,6 +741,8 @@ public function logout(Request $request)
 }
 ```
 
+---
+
 **Penjelasan:**
 
 - `Auth::logout()`: hapus authentication session
@@ -734,6 +778,8 @@ Route::middleware('auth')->group(function () {
 
 **Redirect Otomatis:**
 Jika user belum login akses `/dashboard`, otomatis redirect ke `/login`
+
+---
 
 **Cek Status Login di Blade:**
 
@@ -812,6 +858,8 @@ Auth::logout();
 </form>
 ```
 
+---
+
 **Update Method Login:**
 
 ```php
@@ -862,6 +910,8 @@ public function handle(Request $request, Closure $next, $role)
 }
 ```
 
+---
+
 **Multiple Parameters:**
 
 ```php
@@ -901,6 +951,8 @@ $password // BAD - never store plain text
 $request->session()->regenerate(); // Prevent session fixation
 ```
 
+---
+
 **4. Validation:**
 
 ```php
@@ -934,6 +986,8 @@ if (!$request->secure() && app()->environment('production')) {
 - Global, route, atau group middleware
 - Custom middleware dengan `make:middleware`
 - Register di `Kernel.php`
+
+---
 
 **Authentication:**
 

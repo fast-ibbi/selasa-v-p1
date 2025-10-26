@@ -46,32 +46,6 @@ Setelah pertemuan ini, mahasiswa diharapkan mampu:
 
 ---
 
-## Review Materi Sebelumnya
-
-**Relasi Database (Pertemuan 11)**
-
-- One To One, One To Many, Many To Many
-- Eloquent relationships
-
-**Koneksi ke Materi Hari Ini:**
-
-- File yang di-upload perlu disimpan informasinya di database
-- Relasi antara user dan file (satu user punya banyak foto)
-
----
-
-## Roadmap Materi
-
-1. Konsep dasar file upload
-2. Form upload di Laravel
-3. Laravel Storage System
-4. Menyimpan file
-5. Validasi dan manipulasi
-6. Menampilkan dan menghapus file
-7. Studi kasus praktis
-
----
-
 ## Bagaimana File Upload Bekerja
 
 **Proses HTTP File Upload:**
@@ -104,6 +78,8 @@ User pilih file → Form submit → Server terima → Validasi → Simpan → Re
 - CV/resume
 - Invoice
 - Laporan
+
+---
 
 **Media:** MP4, MP3, AVI
 
@@ -283,6 +259,8 @@ Laravel menyediakan API yang sama untuk berbagai storage:
 - FTP
 - SFTP
 
+---
+
 **Keuntungan:**
 
 - Mudah switch antar storage
@@ -384,6 +362,8 @@ php artisan storage:link
 - Foto produk
 - Banner website
 
+---
+
 **S3/Cloud:**
 
 - Aplikasi dengan traffic tinggi
@@ -409,6 +389,8 @@ public function store(Request $request)
     }
 }
 ```
+
+---
 
 **Parameter:**
 
@@ -497,6 +479,8 @@ Schema::create('user_photos', function (Blueprint $table) {
 });
 ```
 
+---
+
 **Controller:**
 
 ```php
@@ -532,6 +516,8 @@ public function store(Request $request)
     // Proses upload
 }
 ```
+
+---
 
 **Validasi Rules:**
 
@@ -637,6 +623,8 @@ Storage::delete('photos/abc123.jpg');
 Storage::delete(['photos/file1.jpg', 'photos/file2.jpg']);
 ```
 
+---
+
 **Check File Exists:**
 
 ```php
@@ -682,7 +670,11 @@ public function uploadAvatar(Request $request)
     $file = $request->file('avatar');
     $fileName = auth()->id() . '_' . time() . '.jpg';
     $path = public_path('storage/avatars/' . $fileName);
+```
 
+---
+
+```php
     // Resize to 200x200
     Image::make($file)
         ->fit(200, 200)
@@ -719,6 +711,8 @@ if (!in_array($mimeType, $allowedMimes)) {
 }
 ```
 
+---
+
 **Path Traversal Prevention:**
 
 - Laravel otomatis handle
@@ -745,6 +739,8 @@ if (!in_array($mimeType, $allowedMimes)) {
 - Upload ke S3 + CloudFront
 - Atau Cloudinary untuk image optimization
 
+---
+
 **Image Compression:**
 
 ```php
@@ -764,25 +760,20 @@ Image::make($file)
 
 ---
 
-## Ringkasan
-
-**Key Points:**
-
-- **Form Upload:** Gunakan `enctype="multipart/form-data"` pada form
-- **Laravel Storage:** Abstraksi untuk berbagai storage (local, public, S3)
-- **Validasi:** Validasi tipe file, ukuran, dan dimensi untuk keamanan
-- **Public vs Local:** Public untuk file yang bisa diakses, local untuk private files
-- **Symbolic Link:** `php artisan storage:link` untuk akses public storage
-- **Database:** Simpan metadata file (path, size, mime_type) ke database
-- **Security:** Whitelist file type, scan virus, batasi ukuran
-- **Optimization:** Resize/compress image, gunakan CDN
-
 **Best Practices:**
 
 - Generate nama file unik (UUID atau timestamp)
 - Hapus file lama saat update
 - Gunakan disk yang sesuai dengan kebutuhan
 - Monitor storage space
+
+---
+
+<!--
+_class: lead
+-->
+
+# Quiz
 
 ---
 

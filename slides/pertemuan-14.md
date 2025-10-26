@@ -20,8 +20,6 @@ _paginate: skip
 
 ## Tujuan Pembelajaran
 
-**OBE Outcome:**
-
 - Mahasiswa mengetahui praktik terbaik dalam menjaga keamanan aplikasi Laravel
 - Mahasiswa mampu mengimplementasikan caching untuk meningkatkan performa
 - Mahasiswa dapat mengoptimalkan query dan resource aplikasi
@@ -183,6 +181,8 @@ $user->password = bcrypt($request->password);
 $user->password = Hash::make($request->password);
 ```
 
+---
+
 **Gunakan Gates & Policies:**
 
 ```php
@@ -214,6 +214,8 @@ $apiKey = 'sk_live_abc123xyz';
 ```php
 $apiKey = env('STRIPE_API_KEY');
 ```
+
+---
 
 **File .env:**
 
@@ -303,6 +305,8 @@ php artisan config:clear
 **PENTING:**
 Setelah `config:cache`, fungsi `env()` tidak akan bekerja di luar file config. Selalu akses via `config()`.
 
+---
+
 **Contoh:**
 
 ```php
@@ -354,7 +358,11 @@ Cache::put('users', $users, now()->addMinutes(10));
 
 // Ambil data
 $value = Cache::get('key');
+```
 
+---
+
+```php
 // Ambil atau default
 $value = Cache::get('key', 'default');
 
@@ -382,6 +390,8 @@ public function index()
     return view('products.index', compact('products'));
 }
 ```
+
+---
 
 **Dengan Cache (remember):**
 
@@ -413,6 +423,8 @@ foreach ($posts as $post) {
 // Total: 1 + N queries
 ```
 
+---
+
 **Solution: Eager Loading**
 
 ```php
@@ -439,6 +451,8 @@ User::all();
 // BAIK - ambil yang diperlukan saja
 User::select('id', 'name', 'email')->get();
 ```
+
+---
 
 **Chunk untuk Data Besar:**
 
@@ -480,6 +494,8 @@ Schema::create('posts', function (Blueprint $table) {
 });
 ```
 
+---
+
 **Tambah Index ke Tabel Existing:**
 
 ```php
@@ -513,6 +529,8 @@ mix
 npm run production
 ```
 
+---
+
 **Hasil:**
 
 - File size lebih kecil
@@ -530,6 +548,8 @@ npm run production
 ```bash
 composer require intervention/image
 ```
+
+---
 
 ```php
 use Intervention\Image\Facades\Image;
@@ -588,6 +608,8 @@ public function store(Request $request)
 - [ ] CSRF protection aktif
 - [ ] Validasi semua input
 
+---
+
 **Performance:**
 
 - [ ] Config cache (`php artisan config:cache`)
@@ -595,6 +617,8 @@ public function store(Request $request)
 - [ ] View cache (`php artisan view:cache`)
 - [ ] Optimize autoloader (`composer install --optimize-autoloader`)
 - [ ] Redis/Memcached untuk cache
+
+---
 
 **Database:**
 
@@ -641,6 +665,8 @@ Log::error('Payment failed', ['order_id' => $order->id]);
 - Cache query database yang sering diakses
 - Gunakan Redis untuk production
 
+---
+
 **Performance:**
 
 - Eager loading untuk prevent N+1
@@ -652,6 +678,14 @@ Log::error('Payment failed', ['order_id' => $order->id]);
 
 - Follow checklist sebelum deploy
 - Monitor dan log aplikasi
+
+---
+
+<!--
+_class: lead
+-->
+
+# Quiz
 
 ---
 
