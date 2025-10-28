@@ -2,7 +2,7 @@
 title: Pengenalan Pemrograman Web, Konsep MVC, dan Framework Laravel
 version: 1.0.0
 header: Pengenalan Pemrograman Web, Konsep MVC, dan Framework Laravel
-footer: https://github.com/ibbi/selasa-v-p1
+footer: https://github.com/fast-ibbi/selasa-v-p1
 paginate: true
 marp: true
 ---
