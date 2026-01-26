@@ -213,3 +213,6 @@
 - Aktivitas: Presentasi proyek akhir.
 
 - Asesmen: Ujian proyek akhir + laporan.
+
+- [Soal UAS Teori](./soal-uas-teori.md)
+- [Soal UAS Praktek](./soal-uas-praktek.md)
